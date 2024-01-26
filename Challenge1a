@@ -1,0 +1,25 @@
+using System;
+
+namespace MyApplication
+{
+	public class Program
+	{
+		int myNum = 22;
+		int othNum= 21;
+		double myFlo= 3.14;
+		bool myBool= true;
+		public void Main()
+			{// This is my first time with C#
+			Console.WriteLine("My name is Branson");
+			Console.WriteLine("My Age is " + (myNum));
+			Console.WriteLine("Pi is " + (myFlo));
+			Console.WriteLine("I am trying to get into the program" + ( myBool));
+			Console.WriteLine((myNum)+(othNum));
+			Console.WriteLine((myNum)-(othNum));
+			Console.WriteLine((myNum)*(othNum));
+			Console.WriteLine((myNum)/(othNum));
+			Console.ReadLine();
+			}
+	
+	}
+}
