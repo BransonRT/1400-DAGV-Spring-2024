@@ -1,0 +1,44 @@
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		int myTemp = 40;
+		int myGrade = 83;
+		if (myTemp > 30)
+		{
+			Console.WriteLine("stay hydrated and don't stay in the sun too long");
+		}
+		else
+		{
+			Console.WriteLine("Have a pleasant day");
+		}
+
+		{
+			if (myGrade > 90)
+			{
+				Console.WriteLine("A");
+			}
+
+			else if (myGrade > 80)
+			{
+				Console.WriteLine("B");
+			}
+
+			else if (myGrade > 70)
+			{
+				Console.WriteLine("C");
+			}
+
+			else if (myGrade > 60)
+			{
+				Console.WriteLine("D");
+			}
+			else
+			{
+				Console.WriteLine("F");
+			}
+		}
+	}
+} 
