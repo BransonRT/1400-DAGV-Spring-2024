@@ -1,0 +1,69 @@
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		int myTemp = 10;
+		int myGrade = 80;
+		if (myTemp > 30)
+		{
+			Console.WriteLine("stay hydrated and don't stay in the sun too long");
+		}
+		else if (myTemp > 70)
+		{
+			Console.WriteLine("Have a pleasant day");
+		}
+		else if (myTemp < 40)
+		{
+			Console.WriteLine("Wear a light jacket");
+		}
+		else if (myTemp < 30)
+		{
+			Console.WriteLine("Wear winter gear");
+		}
+
+		{
+			if (myGrade > 90)
+			
+			{
+				Console.WriteLine("A");
+			}
+			else if (myGrade > 80)
+			{
+				Console.WriteLine("B");
+			}
+			else if (myGrade > 70)
+			{
+				Console.WriteLine("C");
+			}
+			else if (myGrade > 60)
+			{
+				Console.WriteLine("D");
+			}
+			else
+			{
+				Console.WriteLine("F");
+			}
+		}
+		string mySub= Console.ReadLine();
+		switch(mySub)
+		{
+			case "math":
+				Console.WriteLine("Math is hard but it is important to learn");
+				break;
+			case "science":
+				Console.WriteLine("Science is fun and you learn about the world and beyond");
+				break;
+			case "social studies":
+				Console.WriteLine("Social studies is how you learn our history");
+				break;
+			case "p.e":
+				Console.WriteLine("Physical Education helps you stay fit an healthy");
+				break;
+				
+		}
+	}
+}
+	
+	
