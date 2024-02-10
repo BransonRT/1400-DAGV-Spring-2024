@@ -1,0 +1,50 @@
+using System;
+
+class Program
+{
+	public static void Main()
+	{
+		Random random = new Random();
+		int targetNumber = random.Next(1, 10);
+		int guess;
+		Console.WriteLine("I am thinking of a number between 1 and 10. Can you guess what it is?");
+		while (true)
+		{
+			Console.Write("Enter your guess: ");
+			string input = Console.ReadLine();
+			if (int.TryParse(input, out guess))
+			{
+				if (guess < targetNumber)
+				{
+					Console.WriteLine("No, the number I am thinking of is higher than {guess}. Can you guess what it is?");
+				}
+				else if (guess > targetNumber)
+				{
+					Console.WriteLine("No, the number I am thinking of is lower than {guess}. Can you guess what it is?");
+				}
+				else
+				{
+					Console.WriteLine("Well done! The answer was {targetNumber}.); 
+				break;
+				}
+			}
+			else
+			{
+				Console.WriteLine("Invalid input. Please enter a valid integer.");
+			}
+			 {
+			int arraySize=3;
+			string[] userStrings= newString[arraySize];
+			
+				 Console.WriteLine("Enter 3 favorite foods!: ",arraySize);
+				 for(int i= 0; i < arraySize; i++)
+			{
+				
+					userStrings[i]=Console.ReadLine("");
+					 Console.WriteLine("I like those foods too!");
+				 }
+				 
+			}
+		}
+	 }
+}
