@@ -33,12 +33,7 @@ public class PlayerMovment : MonoBehaviour
 
         moveDirection.y-=gravity*Time.deltaTime;
     
-        if(isJumping=true, moveDirection.y=jumpForce);
-     else
-        {
-            characterController.isGrounded;
-        }
+        if(!(isJumping = true){ }, elsemoveDirection.y=jumpForce);
      }
-    
 
 }
