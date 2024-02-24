@@ -4,36 +4,19 @@ using UnityEngine;
 
 public class PlayerMovment : MonoBehaviour
 { 
-    [SerializeField]private float moveSpeed=5f;
-    [SerializeField] private float jumpForce=5f;
-    [SerializeField] private float gravity=9.81f;
 
-    [SerializeField] private float rotationSpeed = 100f;
-    private CharacterController characterController;
-    private Vector3 moveDirection;
-    private bool isJumping;
-     void Start()
-     {
-        characterController = GetComponent<CharacterController>();
-     }
+   public CharacterController controller;
 
-    // Update is called once per frame
+   public float speed = 12f;
+     
     void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+      float x = Input.GetAxis("Horizontal");
+      float z = Input.GetAxis("Vertical");
 
-        moveDirection=transform.forward*horizontalInput;
-        moveDirection=transform.forward*verticalInput;
+      Vector3 move = transform.right * x + transform.forward * z;
 
-        float rotation = Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime;
-        transform.Rotate(Vector3.up, rotation);
-
-        if(characterController.isGrounded && Input.GetButtonDown("Jump"));
-
-        moveDirection.y-=gravity*Time.deltaTime;
-    
-        if(!(isJumping = true){ }, elsemoveDirection.y=jumpForce);
+      controller.Move(move * speed * Time.deltaTime);
      }
 
 }
