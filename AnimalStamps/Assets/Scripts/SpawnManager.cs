@@ -5,6 +5,9 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
         public GameObject[] animalPrefabs;
+        private float spawnRangeX = 20;
+        private float spawnRangeZ = 20;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +19,10 @@ public class SpawnManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
-            Instantiate(animalPrefabs[0], new Vector3(0, 0, 20), animalPrefabs[0].transform.rotation);
+            int animalIndex = Random.Range(0, animalPrefabs.Length);
+            Vector3 spawnPos =  new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnRangeZ);
+
+            Instantiate(animalPrefabs[animalIndex], spawnPos, animalPrefabs[animalIndex].transform.rotation);
         }
     }
 }
