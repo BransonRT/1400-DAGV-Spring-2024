@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7590247152471743801}
   - component: {fileID: 1849932730748826943}
   - component: {fileID: 3204602027910090355}
+  - component: {fileID: 2709900642151785606}
   m_Layer: 0
   m_Name: Thrown Food
   m_TagString: Untagged
@@ -97,3 +98,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
+--- !u!114 &2709900642151785606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5669199808776266299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5db714801fb2be489b651482c6760a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
