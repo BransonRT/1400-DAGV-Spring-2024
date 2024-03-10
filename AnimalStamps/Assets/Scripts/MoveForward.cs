@@ -13,7 +13,7 @@ public class MoveForward : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {//Tells the animal to just run straight
        transform.Translate(Vector3.forward * Time.deltaTime * speed); 
     }
 }
