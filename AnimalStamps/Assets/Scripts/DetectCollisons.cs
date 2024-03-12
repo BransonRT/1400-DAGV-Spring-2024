@@ -17,7 +17,7 @@ public class DetectCollisons : MonoBehaviour
     }
     
     void OnTriggerEnter(Collider other)
-    {
+    {// Tells the Box Collider to destroy both the projectile and the Game object it hits if the collider box triggers
         Destroy(gameObject);
         Destroy(other.gameObject);
     }
