@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {//Player movement and jump
+    {//Player movement and jump/ also if player dies they won't be able to jump
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround && !gameOver)
         {
              playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
             isOnGround = true;
         }// if the player touches the obstacle then it reads a game over
         else if(collision.gameObject.CompareTag("Obstacle"))
-            {
+            {// Plays a death animation and particle explosion when conditions are met
                 Debug.Log("Game Over");
                 gameOver = true;
                 playerAnim.SetBool("Death_b", true);
