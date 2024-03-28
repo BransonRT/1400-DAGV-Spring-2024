@@ -16,7 +16,7 @@ public class MoveLeft : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {// Stops producing obstacles after a game has
+    {
         if (playerControllerScript.gameOver == false)
         {
             transform.Translate(Vector3.left * Time.deltaTime * speed);
