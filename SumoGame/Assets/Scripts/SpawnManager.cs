@@ -20,7 +20,7 @@ public class SpawnManager : MonoBehaviour
     }
 
     private Vector3 GenerateSpawnPosition()
-    {
+    {//function for spawning enemies at random ranges
         float spawnPosX = Random.Range(-spawnRange, spawnRange);
         float spawnPosZ = Random.Range(-spawnRange, spawnRange);
 
