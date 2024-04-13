@@ -13,7 +13,7 @@ public class RotateCamera : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {// Rotates camera on the Horizontal Axis when side keys are pressed
+    {// Rotates camera on the Horizontal Axis when side keys are pressed. The side keys control the camera rotation onlt
        float horizontalInput= Input.GetAxis("Horizontal");
        transform.Rotate(Vector3.up, horizontalInput * roationSpeed * Time.deltaTime); 
     }
