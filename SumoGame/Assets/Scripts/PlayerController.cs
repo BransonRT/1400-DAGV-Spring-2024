@@ -30,13 +30,24 @@ public class PlayerController : MonoBehaviour
       {
           hasPowerup = true;
           Destroy(other.gameObject);
+        StartCoroutine(PowerupCountdownRoutine());
+      }
+      IEnumerator PowerupCountdownRoutine()
+      {
+        yield return new WaitForSeconds(7);
+        hasPowerup = false;
+
       }
 
     }
     private void OnCollisionEnter(Collision collision)
-    {
+    {//if the player has the powerup and comes into contact with the enemy, a message is written.
       if(collision.gameObject.CompareTag("Enemy") && hasPowerup)
       {
+        Rigidbody enemyRigidbody = collision.gameObject.GetComponent<Rigidbody>();
+        Vector3 awayFromPlayer = collision.gameObject.transform.position - transform.position;
+
+        enemyRigidbody.AddForce(awayFromPlayer * 10, ForceMode.Impulse);
         Debug.Log("Collided with: " + collision.gameObject.name + " with powerup set to" + hasPowerup);
       }
     }
