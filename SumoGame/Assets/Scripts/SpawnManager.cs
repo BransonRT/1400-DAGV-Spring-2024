@@ -6,11 +6,11 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject enemyPrefab;
     private float spawnRange = 9.0f;
+
     // Start is called before the first frame update
     void Start()
     {//spawns enemys at random coordinates
-
-        Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation); 
+        SpawnEnemyWave();
     }
 
     // Update is called once per frame
@@ -18,6 +18,15 @@ public class SpawnManager : MonoBehaviour
     {
         
     }
+
+    void SpawnEnemyWave()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation); 
+        }
+    }
+        
 
     private Vector3 GenerateSpawnPosition()
     {//function for spawning enemies at random ranges
