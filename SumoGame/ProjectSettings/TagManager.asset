@@ -7,6 +7,7 @@ TagManager:
   - Powerup
   - Power Up
   - Enemy
+  - Player Goal
   layers:
   - Default
   - TransparentFX
