@@ -40,6 +40,12 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, zBound);
         }
+       private void OnCollisionEnter(Collision collision)
+       if(OnCollisionEnter.gameObject.CompareTag("Enemy"))
+       {
+        Debug.log("Got hit");
+       }
+
         }
     }
 }
