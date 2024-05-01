@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
 
     public Transform blaster;
     public GameObject lazer;
+    public bool hasPowerup;
+    public int powerUpDuration=5;
 
 
     // Start is called before the first frame update
@@ -42,5 +44,24 @@ public class PlayerController : MonoBehaviour
             //Create laser at the blaster transform position maintaining the objects rotation
             Instantiate(lazer, blaster.transform.position, lazer.transform.rotation);
         }
+       
     }
+
+    // Delete any object with a trigger that hits the player
+     private void OnTriggerEnter(Collider other)
+     {
+        if(other.CompareTag("Powerup"))
+        {
+            hasPowerup = true;
+            Destroy(other.gameObject);
+            StartCoroutine(PowerUpCountdownRoutine());
+        }
+        //Destroy(other.gameObject);
+        IEnumerator PowerUpCountdownRoutine()
+        {
+            yield return new WaitForSeconds(5);
+            hasPowerup=false;
+        }
+     }
+
 }
