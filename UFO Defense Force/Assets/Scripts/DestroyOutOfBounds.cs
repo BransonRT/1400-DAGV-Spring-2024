@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class DestroyOutOfBounds : MonoBehaviour
 {
+    public GameManager gameManager;
     public float topBounds = 40.0f;
     public float lowerBounds = -10.0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     void Awake()
@@ -28,8 +29,12 @@ public class DestroyOutOfBounds : MonoBehaviour
         else if(transform.position.z < lowerBounds)
         {
             Debug.Log("Game Over");
+            gameManager.isGameOver = true;
             Destroy(gameObject);
+            
+
             ///Time.timeScale0 = 0;
         }
     }
+    
 }

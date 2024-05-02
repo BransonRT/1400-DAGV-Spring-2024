@@ -13,11 +13,13 @@ public class PlayerController : MonoBehaviour
     public bool hasPowerup;
     public int powerUpDuration=5;
 
+    public GameManager gameManager;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();//Reference GameManager class
     }
 
     // Update is called once per frame
@@ -39,7 +41,7 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         } 
         // if spacebar is pressed. Fire the lazer
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && gameManager.isGameOver == false)//Second condition makes it where if the game is over you can't fire anymore
         {
             //Create laser at the blaster transform position maintaining the objects rotation
             Instantiate(lazer, blaster.transform.position, lazer.transform.rotation);
